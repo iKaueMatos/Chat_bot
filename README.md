@@ -4,6 +4,7 @@ Resumo do projeto:Projeto com intuito de ganhar mais experiencia no desenvolvime
 🔨 Funcionalidades do projeto:
 
 Funcionalidade 1:(Em faze de desenvolvimento):Envio de mensagens via email
+
 Funcionalidade 2:(Em faze de desenvolvimento) Envio de mensagens via telefone
 
 
