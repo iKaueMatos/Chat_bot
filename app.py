@@ -1,4 +1,7 @@
 import os
+import smtplib
+from email.message import EmailMessage
+from segredos import senha
 
 
 def processar_resposta(resposta,nome):
@@ -34,9 +37,31 @@ def start():
               f' leva para conseguir um emprego na area{os.linesep} [3] - Quando vou saber se dominei uma linguagem de programação? {os.linesep}[4] - onde e recomendado aprender python? {os.linesep}'
                          f' [0] Para sair {os.linesep} Resposta:')
         if resposta == '0':
+            # Configurar email e senha!
+
+            EMAIL_ADDRESS = 'programmerdevoleper@gmail.com'
+            EMAIL_PASSWORD = senha
+
+            # Criar um e-mail
+
+            msg = EmailMessage()
+            msg['Subject'] = 'Bem vindo ao chat meu nome e Robertinho e estou aqui para ajudar!'
+            msg['From'] = 'programmerdevoleper@gmail.com'
+            msg['To'] = email
+            msg.set_content('Meus parábens por entrar em contato,espero ter ajudado de alguma forma ')
+
+            # envio do email
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+                smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+                smtp.send_message(msg)
             break
 #Processar resposta
         processar_resposta(resposta,nome)
 
+
+
 if __name__ == '__main__':
     start()
+
+
+
